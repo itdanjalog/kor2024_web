@@ -33,11 +33,14 @@ function bwrite(){  // JS함수중에 내장된 write함수가 존재하므로 �
         // JSON.stringify( 객체 ) : JSON객체타입을 문자열타입으로 변환 함수
         // INPUT 으로 부터 입력받은 값들을 JSON형식의 문자열타입으로 자바에게 전송
     }
-    fetch( '자바컨트롤러URL' , option)  // fetch( '통신할URL' , 옵션 )
+    fetch( '/day52/write' , option)  // fetch( '통신할URL' , 옵션 )
         .then( response => response.json() )    // .then( 매개변수명 => 매개변수명.json() ) : 응답 결과를 json타입으로 변환
         .then( data => {                        // .then( 매개변수명/응답값 => { 응답결과 코드; } )
             // [4] 응답 결과에 따른 메시지 출력한다.
-            if( data == true ){  alert('write success'); }
+            if( data == true ){
+                alert('write success');
+                findAll()
+            }
             else{ alert('write fail') }
         } )
         .catch( error => { console.log(error); } ); // .catch( 매개변수명 => { 오류결과 코드; } )
@@ -45,5 +48,28 @@ function bwrite(){  // JS함수중에 내장된 write함수가 존재하므로 �
 
 // (2) 글출력 함수 
 function findAll(){
+    // fetch 출력
+    fetch( '/day52/findall' )
+        .then( r => r.json() )
+        .then( data => { console.log(data) } );
+} // f end
 
-} // f end 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
