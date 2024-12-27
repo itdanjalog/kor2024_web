@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class BoardController {
     // 1. 게시물 쓰기 제어 함수
     @PostMapping("/day52/write")
-    public boolean write( @RequestBody BoardDto boardDto ){ // 출력값이 null이 나오는 경우 @RequestBody 코드 추가
+    public boolean write(  BoardDto boardDto ){
         return BoardDao.getInstance().write( boardDto );
     }
 
