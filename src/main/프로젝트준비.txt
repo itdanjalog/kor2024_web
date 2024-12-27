@@ -1,0 +1,22 @@
+- Gradle 그레이들 : 라이브러리 빌드 자동화 도구.
+	- 다양한 외부 라이브러리들을 자동으로 설치/관리 해주는 소프트웨어
+	- JSP(템플릿) , JDBC , SPRING 등등 손쉽게 프로젝트에 적용할 수 있다.
+
+1. 인텔리제이에서 gradle 프로젝트 생성 , 자바프로젝트 X
+	1. Name :  kor2024_web
+	2. Location : 임의
+	3. Build system : *gradle*
+	4. JDK : 17
+	5. Gradle DSL : Groovy
+	[ Create]
+
+2. gradle 프로젝트 구조
+	- 프로젝트명
+		- gradle 폴더( gradle 관련 라이브러리 ) / 신경X
+		- src 폴더
+			- main 폴더
+				- java 폴더       : 자바 코드 위주의 파일 작성
+				- resources 폴더  : HTML/CSS/JS , 설정 파일 위주의 파일 작성
+
+
+
