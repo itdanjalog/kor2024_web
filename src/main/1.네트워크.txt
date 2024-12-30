@@ -47,12 +47,12 @@
                 2. Spring web(톰캣 서버) port : 8080
             - 내 PC의 PORT 알기 : 윈도우버튼 --> CMD(명령프롬프트) --> 'netstat -ano'
 
-        3. *HTTP*
-        4. SMTP
-        5. FTP
-        6. DNS
-        7. SSL/TLS
-        8. HTTPS
+        3. *HTTP*   : 웹 브라우저 와 웹서버 간 데이터 전송 역할
+        4. SMTP     : 이메일 전송 역할
+        5. FTP      : 파일 전송 역할
+        6. DNS      : IP주소를 문자형식으로 변환 해주는 역할
+        7. SSL/TLS  : 인터넷을 암호화 하여 보안 제공하는 역할
+        8. HTTPS    : SSL 과 TLS 가 적용된 HTTP , 인증이 된 HTTP
         등등 다양한 프로토콜이 존재한다.
 
 
