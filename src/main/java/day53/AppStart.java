@@ -16,22 +16,22 @@ public class AppStart {
 // [2] 외부로부터 HTTP 요청를 매핑(연결) 하기 위한 컨트롤러 클래스
 @RestController // 현재 클래스의 HTTP 컨트롤러 클래스임을 지정한다.
 class day53Controller{
-    @PostMapping("/day52")      // HTTP [POST] http://localhost:8080/day52 주소 선언/만들기
+    @PostMapping("/day53")      // HTTP [POST] http://localhost:8080/day52 주소 선언/만들기
     public String postMethod(){
         System.err.println("day53Controller.postMethod"); // soutm
         return "Server Connect POST OK";
     }
-    @GetMapping("/day52")       // HTTP [GET] http://localhost:8080/day52 주소 선언/만들기
+    @GetMapping("/day53")       // HTTP [GET] http://localhost:8080/day52 주소 선언/만들기
     public String getMethod() {
         System.err.println("day53Controller.getMethod"); // sout
         return "Server connect GET OK";
     }
-    @PutMapping("/day52")       // HTTP [PUT] http://localhost:8080/day52 주소 선언/만들기
+    @PutMapping("/day53")       // HTTP [PUT] http://localhost:8080/day52 주소 선언/만들기
     public String putMethod(){
         System.err.println("day53Controller.putMethod"); // soutm
         return "Server connect PUT OK";
     }
-    @DeleteMapping("/day52")    // HTTP [DELETE] http://localhost:8080/day52 주소 선언/만들기
+    @DeleteMapping("/day53")    // HTTP [DELETE] http://localhost:8080/day52 주소 선언/만들기
     public String deleteMethod(){
         System.err.println("day53Controller.deleteMethod"); // soutm
         return "Server connect DELETE OK";
