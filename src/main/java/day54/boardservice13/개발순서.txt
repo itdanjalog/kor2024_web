@@ -1,0 +1,24 @@
+주제 : 비회원제 게시판
+[1교시] 1. DB 설계
+    1. db
+    2. bno btitle bcontent bdate bview bwriter bpwd;
+    3. 패키지 만들기 , boardService13 , controller , dao
+    4. DTO 만들기
+    5. DAO 기본세팅 만들기
+        * 그레이들
+[2교시]
+    1. 글쓰기 / 글출력 아키텍처
+    2. Controller , DAO
+    3. 매핑 주소 만들기
+        * body
+[3교시]
+    1. 글상세 / 글삭제 / 글수정 아키텍처
+    2. Controller , DAO
+    3. 매핑 주소 만들기
+        * queryString
+[1교시]
+    1. HTML 만들기 , A태그
+[2교시]
+    1. JS , FETCH
+[3교시]
+    1. 유지보수
