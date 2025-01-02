@@ -19,6 +19,7 @@ public class BoardDao {
         } catch (Exception e) {   System.out.println(e);   }
     }
     public static BoardDao getInstance(){  return instance;  }
+
     // 1. 게시물 쓰기
     public boolean write(BoardDto boardDto ){
         try{
@@ -34,6 +35,7 @@ public class BoardDao {
         } catch (Exception e) {   System.out.println(e); }
         return false;   // 5. 등록 실패 FALSE
     }
+
     // 2. 게시물 전체 조회
     public ArrayList<BoardDto> findAll(){
         // * 여러개 레코드를 DTO로 만들어서 저장할 리스트 객체 선언.
