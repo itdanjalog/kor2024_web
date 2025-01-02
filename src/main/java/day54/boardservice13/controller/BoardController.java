@@ -53,10 +53,10 @@ public class BoardController {
     // 3. 게시물 개별 조회   [ CRUD 중에 R , HTTP METHOD 중에 GET , 쿼리스트링 ] , 누구를 조회할지 bno가 매개변수로 필요로 한다.
     @GetMapping("/findid")
     // [TEST] Talend Api Tester : [GET] http://localhost:8080/finid?bno=2
-    public BoardDto findid( @RequestParam int bno ){
-        System.out.println("BoardController.findid");
+    public BoardDto findId( @RequestParam int bno ){
+        System.out.println("BoardController.findId");
         System.out.println("bno = " + bno);
-        BoardDto result = BoardDao.getInstance().findid( bno );
+        BoardDto result = BoardDao.getInstance().findId( bno );
         return result;
     } // m end
 

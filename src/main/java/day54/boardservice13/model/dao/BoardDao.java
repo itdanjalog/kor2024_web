@@ -61,7 +61,7 @@ public class BoardDao {
     }
 
     // 3. 게시물 개별 조회
-    public BoardDto findid( int bno ){
+    public BoardDto findId( int bno ){
         // 구현하기전
         return null;
     }
