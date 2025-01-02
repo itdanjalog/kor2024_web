@@ -29,7 +29,7 @@ import java.util.ArrayList;
 @RestController // 현재 클래스에 rest api 가 가능한 클래스임을 주입한다.
 // [1] 클래스 위에 @RestController
 public class BoardController {
-    // 1. 게시물 쓰기        [ CRUD 중에 C , HTTP METHOD 중에 POST ]
+    // 1. 게시물 쓰기        [ CRUD 중에 C , HTTP METHOD 중에 POST , BODY ]
     // [2] 함수위에 @XXXXMapping("/주소만들기")
     // [TEST] Talend Api Tester : [POST] http://localhost:8080/write
     //                            [Headers] Content-Type : application/json
@@ -50,7 +50,7 @@ public class BoardController {
         return result;
     } // m end
 
-    // 3. 게시물 개별 조회   [ CRUD 중에 R , HTTP METHOD 중에 GET ] , 누구를 조회할지 bno가 매개변수로 필요로 한다.
+    // 3. 게시물 개별 조회   [ CRUD 중에 R , HTTP METHOD 중에 GET , 쿼리스트링 ] , 누구를 조회할지 bno가 매개변수로 필요로 한다.
     @GetMapping("/findid")
     // [TEST] Talend Api Tester : [GET] http://localhost:8080/finid?bno=2
     public BoardDto findid( @RequestParam int bno ){
