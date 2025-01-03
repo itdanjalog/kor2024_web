@@ -1,4 +1,4 @@
-package day54.boardservice13;
+package day54day55.boardservice13;
 
 // ================= 콘솔 ==================== //
 //public class AppStart {

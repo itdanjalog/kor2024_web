@@ -1,7 +1,7 @@
-package day54.boardservice13.controller;
+package day54day55.boardservice13.controller;
 
-import day54.boardservice13.model.dao.BoardDao;
-import day54.boardservice13.model.dto.BoardDto;
+import day54day55.boardservice13.model.dao.BoardDao;
+import day54day55.boardservice13.model.dto.BoardDto;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ import java.util.ArrayList;
 //}
 
 // ============== HTTP 웹 =====================//
-@RestController // 현재 클래스에 rest api 가 가능한 클래스임을 주입한다.
+@RestController // 현재 클래스에 rest api 가 가능한 클래스임을 주입한다. + @ResponseBody
 // [1] 클래스 위에 @RestController
 public class BoardController {
     // 1. 게시물 쓰기        [ CRUD 중에 C , HTTP METHOD 중에 POST , BODY ]
@@ -52,7 +52,7 @@ public class BoardController {
 
     // 3. 게시물 개별 조회   [ CRUD 중에 R , HTTP METHOD 중에 GET , 쿼리스트링 ] , 누구를 조회할지 bno가 매개변수로 필요로 한다.
     @GetMapping("/findid")
-    // [TEST] Talend Api Tester : [GET] http://localhost:8080/finid?bno=2
+    // [TEST] Talend Api Tester : [GET] http://localhost:8080/findid?bno=2
     public BoardDto findId( @RequestParam int bno ){
         System.out.println("BoardController.findId");
         System.out.println("bno = " + bno);
@@ -61,10 +61,37 @@ public class BoardController {
     } // m end
 
     // 4. 게시물 수정
+    @PutMapping("/update")
+    public boolean update( @RequestBody BoardDto boardDto ){
+        System.out.println("BoardController.update");
+        System.out.println("boardDto = " + boardDto);
+        boolean result = BoardDao.getInstance().update( boardDto );
+        return result;
+    } // m end
 
-    // 5. 게시물 삭제
+    // 5. 게시물 삭제 [ CRUD 중에 D , HTTP METHOD 중에 DELETE , 쿼리스트링 ]
+    @DeleteMapping("/delete")
+    // [TEST] Talend Api Tester : [Delete] http://localhost:8080/delete?bno=1
+    public boolean delete( @RequestParam int bno ){
+        System.out.println("BoardController.delete");
+        System.out.println("bno = " + bno);
+        boolean result = BoardDao.getInstance().delete( bno );
+        return  result;
+    }
 
 } // class end
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

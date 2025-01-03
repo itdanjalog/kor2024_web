@@ -1,4 +1,4 @@
-package day54.boardservice13.model.dto;
+package day54day55.boardservice13.model.dto;
 
 public class BoardDto { // class start
     // 1. 멤버변수 , 주로 db의 테이블 속성과 동일 + 커스텀 가능.

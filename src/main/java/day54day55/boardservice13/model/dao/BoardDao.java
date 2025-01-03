@@ -1,11 +1,8 @@
-package day54.boardservice13.model.dao;
+package day54day55.boardservice13.model.dao;
 
-import day54.boardservice13.model.dto.BoardDto;
+import day54day55.boardservice13.model.dto.BoardDto;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class BoardDao {
@@ -62,13 +59,36 @@ public class BoardDao {
 
     // 3. 게시물 개별 조회
     public BoardDto findId( int bno ){
-        // 구현하기전
+        try {
+            String sql = "select * from board where bno = ? "; // (1) SQL 작성한다.
+            PreparedStatement ps = conn.prepareStatement(sql); // (2) SQL 기재한다.
+            ps.setInt(1, bno);// (3) 기재된 SQL의 매개변수를 대입한다.
+            ResultSet rs = ps.executeQuery(); // (4) 기재된 SQL 실행하고 결과를 반환 받는다.
+            if (rs.next()) {// (5) 실행결과에 따른 제어한다.
+                BoardDto boardDto = new BoardDto(  // * 조회된 레코드를 DTO로 만든다.
+                        rs.getInt("bno"), rs.getString("btitle"),
+                        rs.getString("bcontent"), rs.getString("bdate"),
+                        rs.getString("bwriter"), null);
+                return boardDto;
+            }
+        }catch ( Exception e ){  System.out.println( e ); }
         return null;
-    }
-
+    } // f end
     // 4. 게시물 수정
-
+    public boolean update( BoardDto boardDto ){  return false; }
     // 5. 게시물 삭제
+    public boolean delete( int bno ){
+        try {
+            String sql = "delete from board where bno = ? "; // (1) SQL 작성한다.
+            PreparedStatement ps = conn.prepareStatement(sql); // (2) SQL 기재한다.
+            ps.setInt(1, bno);// (3) 기재된 SQL의 매개변수 대입한다.
+            int count = ps.executeUpdate();// (4) 기재된 SQL 실행하고 결과를 반환 받는다.
+            if (count == 1) {
+                return true;
+            } // (5) 실행결과에 따른 제어한다.
+        } catch (Exception e) { System.out.println( e ); }
+        return false;
+    }
 }
 
 
