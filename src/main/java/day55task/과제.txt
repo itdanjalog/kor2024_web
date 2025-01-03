@@ -1,5 +1,5 @@
 [ 웹 과제2 ]
-    선택1(복습과제) : day54day55 'boardservice13' 패키지 와 resources board.html 를 따라치기 3번
+    선택1(복습과제) : day54day55 -> 'boardservice13' 패키지 와 resources -> day55 -> board.html 를 따라치기 3번
     선택2(활용과제) : '나만의 할일 목록' 를 JAVA (spring web)와 연동하여 영구저장 되도록 구현
         1. day50 에서 작성한 '나만의 할일 목록' html , css , js 활용
         2. '나만의 할일 목록' 의 Controller , Dao , Dto , AppStart 구성해서 fetch 로 통신하시오.
