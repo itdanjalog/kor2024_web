@@ -39,15 +39,36 @@ function onFindAll(){ console.log( 'onFindAll load');
 
 // 개별 글 출력 함수 
 function onFindId(){ console.log( 'onFindId load');
-
-}
+    // [1] 조회할 게시물 번호 , 샘플은 DB에 존재하는 게시물 번호 진행 
+    let sampleBno = 3;
+    // [2] fetch
+    fetch( `/findid?bno=${ sampleBno }` )
+        .then( r => r.json() )
+        .then( d => console.log(d)  )
+        .catch( e => console.log(e) );
+} // f end 
 
 // 글 수정 함수 
 function onUpdate(){ console.log( 'onUpadte load');
-
-}
+    // [1] 수정할 정보 샘플
+    let sampleBoard = {"bno" : 3 ,  "btitle" : "수정한제목22" ,  "bcontent" : "수정한내용22" }
+    // [2] fetch 
+    fetch( `/update` , { 
+        method : 'PUT' ,  headers:{'Content-Type' : 'application/json'},
+        body : JSON.stringify( sampleBoard ) 
+    } )
+        .then( r => r.json() )
+        .then( d => console.log(d)  )
+        .catch( e => console.log(e) );
+} // f end 
 
 // 글 삭제 함수 
 function onDelete(){ console.log( 'onDelete load');
-
-}
+    // [1] 삭제할 게시물 번호 , 샘플은 DB에 존재하는 게시물 번호 진행 
+    let sampleBno = 4;
+    // [2] fecth
+    fetch( `/delete?bno=${ sampleBno }` , { method : 'delete' } )
+        .then( r => r.json() )
+        .then( d => console.log( d ) )
+        .catch( e => console.log(e) );
+} // f end 
