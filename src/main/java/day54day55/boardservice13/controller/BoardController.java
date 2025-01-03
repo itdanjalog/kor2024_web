@@ -60,8 +60,12 @@ public class BoardController {
         return result;
     } // m end
 
-    // 4. 게시물 수정
+    // 4. 게시물 수정 [ CRUD 중에 U , HTTP METHOD 중에 PUT , BODY ]
     @PutMapping("/update")
+    // [TEST] Talend Api Tester :
+    //      [PUT] http://localhost:8080/update
+    //      [Headers] Content-Type : application/json
+    //      [body] {"bno" : 3 ,  "btitle" : "수정한제목" ,  "bcontent" : "수정한내용" }
     public boolean update( @RequestBody BoardDto boardDto ){
         System.out.println("BoardController.update");
         System.out.println("boardDto = " + boardDto);

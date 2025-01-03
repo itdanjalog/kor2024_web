@@ -64,6 +64,11 @@
 
             response    응답
 
+    10. HTTP 이용한 통신 라이브러리
+        0. [크롬] talend api , 테스트용도.
+        1. [JS] Fetch
+        2. [JQUERY] AJAX
+        3. [JS] AXIOS
 
 
 

@@ -74,8 +74,21 @@ public class BoardDao {
         }catch ( Exception e ){  System.out.println( e ); }
         return null;
     } // f end
+
     // 4. 게시물 수정
-    public boolean update( BoardDto boardDto ){  return false; }
+    public boolean update( BoardDto boardDto ){
+        try {
+            String sql = "update board set btitle = ? , bcontent = ? where bno = ? ";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, boardDto.getBtitle());
+            ps.setString(2, boardDto.getBcontent());
+            ps.setInt(3, boardDto.getBno());
+            int count = ps.executeUpdate();
+            if (count == 1) {  return true;  }
+        }catch ( Exception e ){System.out.println( e ); }
+        return false;
+    } // f end
+
     // 5. 게시물 삭제
     public boolean delete( int bno ){
         try {
@@ -88,7 +101,8 @@ public class BoardDao {
             } // (5) 실행결과에 따른 제어한다.
         } catch (Exception e) { System.out.println( e ); }
         return false;
-    }
+    } // f end
+
 }
 
 
