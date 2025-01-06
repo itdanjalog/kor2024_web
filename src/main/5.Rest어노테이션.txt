@@ -1,0 +1,23 @@
+[ Rest API 어노테이션 ]
+    1. Rest API : HTTP 통신을 통해 리소스의 생성[C],읽기[R],업데이트[U],삭제[D]를 수행하는 아키텍처/구조
+    2. 종류
+        @Controller :
+            1. Spring web MVC 중에서 Controller 역할의 클래스임을 표시
+            2. 스프링 컨테이너(메모리/저장소) 에 빈(인스턴스/객체) 등록할 수 있다.     * 싱글톤 사용할 필요가 없어졌다.
+            3. 모든 HTTP 요청이 매핑/연결 되는 클래스로 사용할 수 있다.
+        @GetMapping("URL정의")
+        @PostMapping("URL정의")
+        @PutMapping("URL정의")
+        @DeleteMapping("URL정의")
+            1. HTTP GET/POST/PUT/DELETE method 의 요청을 자바 메소드와 매핑/연결 하는 어노테이션
+            2. HTTP GET/POST/PUT/DELETE URL 정의할 수 있다. @GetMapping("URL정의")
+                -> 자바 메소드 를 웹 통신으로 부터 외부로 연결이 가능하다.
+                -> 주의할점 : 프로젝트 동일한 URL 중복은 불가능하다. 단 HTTP METHOD가 다를경우 는 가능하다.
+        @ResponseBody
+            1. HTTP 응답을 객체(Body) 또는 값으로 반환 해주는 어노테이션
+                -> Content-Type : 'application/json' 또는 test/plain
+            2. 만일 생략하면 view( 템플릿=jsp/타임리프/jsx 등등 ) 반환이 기본값으로 적용된다.
+                -> Content-Type : 'html/text'
+
+* Rest API 어노테이션 테스트 는 talend api
+* Spring 에서는 주로 Body 를 JSON/Dto/Map 로 취급한다.

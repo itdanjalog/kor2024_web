@@ -27,7 +27,7 @@
         4. DELETE   : REST API(HTTP) 에서는 주로 자원 삭제 요청[ D ]   @DeleteMapping
 
     7. HTTP 사용하는 소프트웨어, 라이브러리 , 프레임워크
-        1. 브라우저(크롬,엣지,사파리 등등) 2.fetch함수 3. spring web(톰캣서버) 등등
+        1. 브라우저(크롬,엣지,사파리 등등) 2.fetch함수 3. spring web(톰캣서버)  4.talend api 등등
 
     8. HTTP 통신을 테스트 하는 방법 *
         1. [크롬 브라우저 ] 인터넷 구글에서 'talend api' 검색
