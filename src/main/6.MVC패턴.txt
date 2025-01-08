@@ -46,8 +46,8 @@
                         - AppStart 클래스  : main함수를 갖는 @SpringBootApplication 클래스
 
                     -resources 폴더 : 프론트엔드 코드 파일 , 설정파일
-                        - static 폴더
-                        - templates 폴더
+                        - static 폴더     : 정적파일
+                        - templates 폴더  : 동적파일
 
 
 
