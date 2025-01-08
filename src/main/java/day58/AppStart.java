@@ -42,17 +42,12 @@ class ViewController{
     public String list(){
         return "/day58/student/list.html";
     }
-    // [4] student 개별 학생 점수 조회 페이지
-    @GetMapping("/student/info")
-    public String info(){
-        return "/day58/student/info.html";
-    }
-    // [5] student 점수 수정 페이지
+    // [4] student 점수 수정 페이지
     @GetMapping("/student/update")
     public String update(){
         return "/day58/student/update.html";
     }
-    // [6] student 점수 삭제 페이지
+    // [5] student 점수 삭제 페이지
     @GetMapping("/student/delete")
     public String delete(){
         return "/day58/student/delete.html";
