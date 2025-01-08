@@ -27,9 +27,26 @@ class ViewController{
         return "/day58/layout/index.html"; // index.html 템플릿 파일 반환
     }
 
-    @GetMapping("/student")
+    // [1] student 메인페이지를 매핑/연결 하는 URL 주소 정의/만들기
+    @GetMapping("/student") 
     public String index3(){
-        return "/day58/student/index.html"; // index.html 템플릿 파일 반환
+        return "/day58/student/index.html";
     }
-
+    // [2] student 학생점수등록 페이지를 매핑/연결 하는 URL 주소 정의/만들기
+    @GetMapping("/student/regist")
+    public String regist(){
+        return "/day58/student/regist.html";
+    }
+    // [3] student 전체 학생 점수 조회 페이지
+    @GetMapping("/student/list")
+    
 } // class end
+
+
+
+
+
+
+
+
+
