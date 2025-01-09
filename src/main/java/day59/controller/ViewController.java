@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller  // 스프링 컨테이너(메모리) 에 빈(인스턴스) 주입
 public class ViewController {
+    // + 템플릿 파일들을 (VIEW) 반환하는 메소드들을 모아둔 클래스
 
     // 1. 메인페이지 반환하는 get매핑 함수
     @GetMapping("")
