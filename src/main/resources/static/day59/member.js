@@ -46,7 +46,7 @@ function login(){
     const mid = midInput.value
     const mpwd = mpwdInput.value
     // 3. URL 뒤로 ? 부터는 쿼리스트링 방식 , 매개변수=값&매개변수=값
-    fetch( `/login?mid=${mid}&mpwd=${mpwd}` )
+    fetch( `/login.do?mid=${mid}&mpwd=${mpwd}` )
         .then( response => response.json() )
         .then( data => {
             if( data == true ){
@@ -57,5 +57,5 @@ function login(){
                 alert('로그인 실패')
             }
         })
-        .then( error => {console.log(error); } )
+        .catch( error => {console.log(error); } )
 } //f end 
