@@ -8,7 +8,7 @@
 
         2. 인텔리제이 롬복 설치 ( 인털리제이[PC] 마다 1번 )
             1. 상단 메뉴 -> [FILE] -> [Settings]
-            2. 사이드메뉴 [ Plugins ] 클릭 -> Lombok 검색 -> install
+            2. 사이드메뉴 [ Plugins ] 클릭 -> lombok 검색 -> install
 
     3. 제공 : @어노테이션 이용
         1. 생성자를 대신 만들어준다.
