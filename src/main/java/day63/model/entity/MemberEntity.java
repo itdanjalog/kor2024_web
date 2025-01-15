@@ -7,7 +7,7 @@ import lombok.*;
 @Table(name = "member")  // 테이블 이름 정의
 @Getter@Setter@Builder@ToString
 @NoArgsConstructor@AllArgsConstructor
-public class MemberEntity {
+public class MemberEntity extends BaseTime   {
     // ======= 테이블 필드/속성 설계  day59 회원테이블과 비교 =========//
     @Id // primary key 제약조건  정의
     @GeneratedValue( strategy = GenerationType.IDENTITY ) // auto_increment 제약조건 정의
