@@ -10,9 +10,9 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
-@Getter
-@MappedSuperclass // 슈퍼클래스 목적으로 사용할 클래스 ( 자체적인 매핑없음 )
 @EntityListeners( AuditingEntityListener.class)
+@MappedSuperclass // 슈퍼클래스 목적으로 사용할 클래스 ( 자체적인 매핑없음 )
+@Getter
 public class BaseTime {
     @CreatedDate
     private LocalDateTime cdate; // 엔티티 생성날짜/시간
