@@ -31,7 +31,7 @@ public class MemberEntity extends BaseTime {
     // 양방향 :
     @OneToMany(  mappedBy = "memberEntity" )
     @ToString.Exclude @Builder.Default
-    private List<MemberEntity> entities = new ArrayList<>();
+    private List<ReplyEntity> entities = new ArrayList<>();
 
 }
 /*
