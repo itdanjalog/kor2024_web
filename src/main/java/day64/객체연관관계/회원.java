@@ -16,7 +16,7 @@ public class 회원 {
     @Builder.Default // 빌더패턴 사용시 초기값이 대입되지 않는 멤버변수에 대해서는 초기값을 자동으로 대입한다.
     @ToString.Exclude // ToString() 제외하는 멤버변수 정의
     List<게시물> 작성한게시물 = new ArrayList<>();
-    @Builder @ToString.Exclude
+    @Builder.Default @ToString.Exclude
     List<댓글> 작성한댓글 = new ArrayList<>();
     // 양방향 주의할점 : 두 객체 서로 참조할때는 순환참조(무한호출) 주의해야한다.
     // 해결방안1 : ToString 메소드를 사용하지 않는다.
