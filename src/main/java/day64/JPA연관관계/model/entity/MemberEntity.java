@@ -27,6 +27,12 @@ public class MemberEntity extends BaseTime {
     @ToString.Exclude // 양방향에서 순환 참조를 대비 하기 위한 toString 사용 제외
     @Builder.Default // 빌더 패턴 사용시 자동으로 초기값을 주입 하는 어노테이션
     private List< BoardEntity > boardEntityList = new ArrayList<>();
+
+    // 양방향 :
+    @OneToMany(  mappedBy = "memberEntity" )
+    @ToString.Exclude @Builder.Default
+    private List<MemberEntity> entities = new ArrayList<>();
+
 }
 /*
     *양방향 코드를 적용해서 서버를 재실행시 : 오류 다시 발생할 수 있다. 데이터베이스 삭제했다가 재생성
