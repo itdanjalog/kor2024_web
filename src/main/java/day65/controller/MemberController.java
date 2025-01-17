@@ -1,5 +1,6 @@
 package day65.controller;
 
+import day65.model.dto.BoardDto;
 import day65.model.entity.BoardEntity;
 import day65.model.repository.MemberRepository;
 import day65.service.MemberService;
@@ -17,7 +18,7 @@ public class MemberController {
 
     //  [1] 내가 쓴글 전체 조회
     @GetMapping("/info/board/findall")
-    public List<BoardEntity> myBoardList(@RequestParam int mno ){
+    public List<BoardDto> myBoardList(@RequestParam int mno ){
         return memberService.myBoardList( mno );
     }
 
