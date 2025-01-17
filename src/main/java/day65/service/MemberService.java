@@ -81,17 +81,16 @@ public class MemberService {
             // .get() : Optional 객체내 엔티티 꺼내기
         MemberEntity memberEntity = optionalMember.get(); // 엔티티 꺼내기
 
-        // 2. 게시물 엔티티 생성한다. dto --> 엔티티 변환
+        // 2. 게시물 엔티티 생성한다. dto --> 엔티티 변환 , 엔티티를 처음 생성할때는 영속성(DB테이블과 매핑) 없다.
         BoardEntity boardEntity = boardDto.toEntity();
         // 3. 게시물 엔티티에 회원엔티티 넣어주기. // FK
         boardEntity.setMemberEntity( memberEntity );
         // 4. 게시물 엔티티 저장하기
         BoardEntity saveEntity = boardRepository.save( boardEntity );
-        // 5. .save( 엔티티 ) : 엔티티 저장를 성공하면 성공한 엔티티 영속성 연결/매핑
+        // 5. .save( 엔티티 ) : 엔티티 저장를 성공하면 성공한 엔티티 영속성(자바객체<--->DB테이블) 연결/매핑
         if( saveEntity.getBno() > 0 ){ return true; } // 0보다크다 : pk번호는 1번 부터 시작하므로
         return false;
     }
-
 } // c end
 
 
