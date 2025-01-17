@@ -3,7 +3,9 @@ package day65.service;
 import day65.model.dto.BoardDto;
 import day65.model.entity.BoardEntity;
 import day65.model.entity.MemberEntity;
+import day65.model.repository.BoardRepository;
 import day65.model.repository.MemberRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -60,4 +62,53 @@ public class MemberService {
         } // if end
         return null;
     } // f end
+
+
+    @Autowired BoardRepository boardRepository;
+    // [2] 게시물 작성 , 양방향 관계 일때
+    @Transactional // 함수안에서 insert , update , delete 쿼리문들을 트랜잭션 으로 사용.
+    // 트랜잭션이란? 여러 작업들을 하나의 작업 단위로 묶어, 하나라도 작업이 실패히면 모두 실패/롤백/취소 , 모두 성공해야 최종 성공
+    public boolean myBoardWrite( BoardDto boardDto ){
+        // * 현재 로그인된 회원이 게시물을 작성한다는 가정
+        // 1. 현재 로그인된 회원번호를 세션에서 조회한다.
+        int loginMno = 1; // (예시) 1번 회원이 로그인된 상태일때 가정
+            // 1-2 현재 로그인된 회원번호의 회원엔티티 조회
+        Optional< MemberEntity > optionalMember = memberRepository.findById( loginMno );
+            // Optional : null 값을 저장/관리 할 수 있는 객체
+        if( optionalMember.isPresent() == false ){
+            return false;  // 조회된 엔티티가 없으면 비로그인 상태로 간주하여 함수 반환
+        }
+            // .get() : Optional 객체내 엔티티 꺼내기
+        MemberEntity memberEntity = optionalMember.get(); // 엔티티 꺼내기
+
+        // 2. 게시물 엔티티 생성한다. dto --> 엔티티 변환
+        BoardEntity boardEntity = boardDto.toEntity();
+        // 3. 게시물 엔티티에 회원엔티티 넣어주기. // FK
+        boardEntity.setMemberEntity( memberEntity );
+        // 4. 게시물 엔티티 저장하기
+        BoardEntity saveEntity = boardRepository.save( boardEntity );
+        // 5. .save( 엔티티 ) : 엔티티 저장를 성공하면 성공한 엔티티 영속성 연결/매핑
+        if( saveEntity.getBno() > 0 ){ return true; } // 0보다크다 : pk번호는 1번 부터 시작하므로
+        return false;
+    }
+
 } // c end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
