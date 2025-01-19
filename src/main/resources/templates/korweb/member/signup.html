@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>코리아IT 회원시스템</title>
+</head>
+<body>
+
+    <div th:replace="~{ /korweb/header.html :: header }"></div>
+    <div class="container">
+        아이디 : <input class="midInput"/> <br/>
+        비밀빌번호 : <input class="mpwdInput" /> <br/>
+        닉네임 : <input class="mnameInput" /> <br />
+        <button type="button" onclick="signup()"> 회원가입 </button>
+    </div>
+
+    <script src="/korweb/js/signup.js"></script>
+
+</body>
+</html>
